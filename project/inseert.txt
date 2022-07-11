@@ -1,0 +1,28 @@
+<?php
+include ('dbcon.php');
+//access form imput using supper global variable
+$courseNo = $_POST['courseNo'];
+$courseTitle = $_POST['courseTitle'];
+$courseHour = $_POST['courseHour'];
+$predequest = $_POST['predequest'];
+
+//data insertion using myqli_quwry method
+$sql="insert INTO course()
+values('$courseNo','$courseTitle','$courseHour','$predequest ');";
+
+$insert = mysqli_query($conn,$sql);
+
+// check data insertion pass or not
+
+if(!$insert)
+{
+    echo "data failed to insert";
+
+
+}
+else
+
+{
+    include('form1.php');
+}
+?>
